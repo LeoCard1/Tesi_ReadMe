@@ -1,0 +1,87 @@
+File Name,Link,Section Title,Level,Category,Word Count,Image,Score
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,jaq,1,Uncategorized,371,4,1.71
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Installation,1,Install,1,0,2.01
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Binaries,2,Uncategorized,53,0,-1.47
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,From Source,2,Uncategorized,120,0,-0.8
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Examples,1,Usage,127,0,3.27
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Performance,1,Uncategorized,1512,0,13.12
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Features,1,Uncategorized,23,0,-1.77
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Basics,2,Uncategorized,81,0,-1.19
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Paths,2,Configuration,314,0,5.140000000000001
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Operators,2,Uncategorized,55,0,-1.45
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Definitions,2,Uncategorized,16,0,-1.84
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Core filters,2,Uncategorized,99,0,-1.01
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Standard filters,2,Uncategorized,100,0,-1.0
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Numeric filters,2,Uncategorized,309,0,1.0899999999999999
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Advanced features,2,Uncategorized,18,0,-1.82
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Differences between jq and jaq,1,Uncategorized,5,0,-1.95
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Numbers,2,Uncategorized,1710,0,15.100000000000001
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,NaN and infinity,3,Uncategorized,114,0,-0.8600000000000001
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Preservation of fractional numbers,3,Uncategorized,123,0,-0.77
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Assignments,2,Uncategorized,351,0,1.5099999999999998
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Definitions,2,Uncategorized,1253,0,10.53
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Arguments,2,Uncategorized,273,0,0.73
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Folding,2,Uncategorized,21,0,-1.79
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Error handling,2,Uncategorized,2228,0,20.28
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Miscellaneous,2,Uncategorized,319,0,1.19
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Contributing,1,contributing,2613,0,28.13
+0.md,http://raw.githubusercontent.com/01mf02/jaq/master/README.md,Acknowledgements,1,Uncategorized,94,0,-1.06
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,Reptyl,1,Uncategorized,1,0,-1.99
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,"UPDATE March 20, 2023: The free API endpoint is currently down. From version 2.0.0.2 you can choose what API endpoint to use in your config.json. By default, api.openai.com is set. Please update your PyPi package**",2,Uncategorized,54,1,-1.46
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,INTRO,2,Uncategorized,191,0,-0.09000000000000008
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,HOW TO USE,2,Usage,200,0,4.0
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,IMPORTANT NOTES,2,Uncategorized,131,0,-0.69
+1.md,http://raw.githubusercontent.com/0ut0flin3/Reptyl/master/README.md,HOW TO USE,2,Usage,623,0,8.23
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,"<p align=""right"">![Feather Logo](https://github.com/0xBaca/Feather/blob/Developement_Beta/feather-1.0/logo/128x128/apps/feather.png)</p><p align=""center"">Feather</p>",1,Uncategorized,5,1,-1.95
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,What is Feather?,2,Uncategorized,53,0,-1.47
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Portability,2,Uncategorized,15,0,-1.85
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Compiling,2,Uncategorized,84,0,-1.1600000000000001
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Running tests,2,Uncategorized,12,0,-1.88
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Documentation,2,Uncategorized,14,0,-1.8599999999999999
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Copying,2,Uncategorized,20,0,-1.8
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Showing your appreciation,2,Uncategorized,28,0,-1.72
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Helping to improve Feather,2,Uncategorized,23,0,-1.77
+2.md,http://raw.githubusercontent.com/0xBaca/FeatherEditor/master/README.md,Author,2,Uncategorized,218,0,0.18000000000000016
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,🧙‍♂ codemancer,1,Uncategorized,2,0,-1.98
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,"_Develop 10x faster with GPT-4, write and modify code from the command line._",3,Uncategorized,81,0,-1.19
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Installation,2,Install,4,0,2.04
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Usage,2,Usage,57,0,2.57
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Reading and writing to the same file,3,Uncategorized,37,0,-1.63
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Reading and writing to a different file,3,Uncategorized,35,0,-1.65
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Writing from prompt to file,3,Uncategorized,28,0,-1.72
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Simple prompting,3,Uncategorized,15,0,-1.85
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Customizing model and temperature,3,Uncategorized,18,0,-1.82
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,Limitations,2,Uncategorized,79,0,-1.21
+3.md,http://raw.githubusercontent.com/0xmmo/codemancer/master/README.md,License,2,license,14,0,2.14
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,climenu,2,Uncategorized,75,0,-1.25
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,Basic example (example.conf):,3,Uncategorized,3,0,-1.97
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,climenu in a file explorer (explorer.sh):,3,Uncategorized,6,0,-1.94
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,Features:,3,Uncategorized,226,0,0.2599999999999998
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,Roadmap:,3,Uncategorized,63,0,-1.37
+4.md,http://raw.githubusercontent.com/10xJSChad/climenu/master/README.md,Contribution Guidelines:,3,Uncategorized,129,0,-0.71
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Timer-CLI,1,Uncategorized,12,1,-1.88
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Installation,2,Install,9,0,2.09
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Usage,2,Usage,4,0,2.04
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,How to specify a duration,3,Uncategorized,20,0,-1.8
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Duration examples,4,Uncategorized,15,0,-1.85
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Options,3,Configuration,38,0,2.38
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,--no-bell,4,Uncategorized,20,0,-1.8
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,"-m, --message",4,Uncategorized,29,0,-1.71
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,Contributing,2,contributing,75,0,2.75
+6.md,http://raw.githubusercontent.com/1Blademaster/timer-cli/master/README.md,License,2,license,12,0,2.12
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,✨ Features,2,Uncategorized,66,0,-1.3399999999999999
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,⚡ Setup,2,Uncategorized,2,0,-1.98
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,📋 Requirements,3,Uncategorized,18,0,-1.82
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,💻 Installation,3,Uncategorized,5,0,-1.95
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,📦 Environment Variables,4,Uncategorized,37,0,-1.63
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🐚 Manual Installation,4,Uncategorized,78,0,-1.22
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,💾 Git Integration,4,Uncategorized,56,0,-1.44
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🚀 Usage,2,Uncategorized,173,0,-0.27
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,📁 Dir Structure,3,Uncategorized,129,0,-0.71
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,⚙️ Configuration,3,Uncategorized,123,0,-0.77
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,Default Configs,4,Uncategorized,35,0,-1.65
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🏗️ What's Next,2,Uncategorized,5,0,-1.95
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🧑‍💻 Behind The Code,2,Uncategorized,4,0,-1.96
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🌈 Inspiration,3,Uncategorized,42,0,-1.58
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🔍 More CLI Tools,3,Uncategorized,32,0,-1.68
+7.md,http://raw.githubusercontent.com/2KAbhishek/tdo/master/README.md,🧰 Tooling,3,Uncategorized,51,0,-1.49
