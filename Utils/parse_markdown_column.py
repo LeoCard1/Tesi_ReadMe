@@ -1,169 +1,127 @@
+import re
 from markdown_it import MarkdownIt
-import Utils.category as c
+from Utils.category import tipologia
 
-# Funzione per trovare i titoli nelle sezioni del file Markdown
-def find_titles_md(link_md, path_file):
-    try:
-        with open(path_file, 'r', encoding='utf-8') as file:
-                md_text = file.read()
-    except UnicodeDecodeError:
-                md_text = ""
-
-    md = MarkdownIt()
-    tokens = md.parse(md_text)
-
-    h1_titles = [link_md]
-    for i, token in enumerate(tokens):
-        if token.type == 'heading_open':
-            if i + 1 < len(tokens) and tokens[i + 1].type == 'inline':
-                h1_titles.append(tokens[i + 1].content)
-                h1_titles.append(str(int(token.tag[1:])))
-    return h1_titles
-
-def initialize_data_table(num_file_md, link_list, path_md_file):
+#Inizializza i campi della tabella
+def initialize_data_table(num_file_md, link_list):
     data_table = []
     for i in range(num_file_md):
         file_data = {
             "file_name": f"{i}.md",
-            "link": link_list[i],
-            "sections": []
+            "h1_titles": [],
+            "category": [],
+            "char_counts": [],
+            "h2_h3_titles": [],
+            "h2_h3_counts": [],
+            "link": link_list[i]
         }
         data_table.append(file_data)
     return data_table
 
+#Restituisce due liste e il testo Markdown integrale ripulito. Ogni titolo è una tupla con livello e categoria
+def find_titles_md(md_file):
+    try:
+        with open(md_file, 'r', encoding='utf-8') as file:
+            md_text = file.read()
+    except UnicodeDecodeError:
+        md_text = ""
 
-def extract_sections(data_table, path_md_file):
-    for i, file_data in enumerate(data_table):
-        titles = find_titles_md(file_data["link"], path_md_file + file_data["file_name"])
+    md = MarkdownIt()
+    tokens = md.parse(md_text)
 
-        try:
-            with open(path_md_file + file_data["file_name"], 'r', encoding='utf-8') as file:
-                md_lines = file.readlines()
-        except:
-            md_lines = ""
+    h1_titles = []
+    h2_3_titles = []
 
-        md_text = "".join(md_lines)
+    for i, token in enumerate(tokens):
+        if token.type == 'heading_open':
+            level = int(token.tag[1:])
+            title_content = tokens[i + 1].content
 
-        for j in range(1, len(titles), 2):
-            section_title = titles[j]
-            normalized_title = section_title.strip().lower()
+            cleaned_title = clean_text(title_content)  # Pulizia del titolo
+            category = categorize_title(cleaned_title)  # Categorizzazione titolo
 
-            start_index = md_text.lower().find(normalized_title)
-            if start_index == -1:
-                continue
-
-            if j + 2 < len(titles):
-                next_section_title = titles[j + 2].strip().lower()
-                end_index = md_text.lower().find(next_section_title, start_index + len(normalized_title))
-            else:
-                end_index = len(md_text)
-
-            section_text = md_text[start_index:end_index]
-
-            section_info = {
-                "section_title": titles[j],
-                "section_text": section_text
-            }
-
-            file_data["sections"].append(section_info)
-
-    return data_table
-
-def add_section_levels(data_table, path_md_file):
-    for i, file_data in enumerate(data_table):
-        titles = find_titles_md(file_data["link"], path_md_file + file_data["file_name"])
-
-        for j in range(1, len(titles), 2):
-            section_level = titles[j + 1]  # Assumendo che il livello sia nel titolo successivo
-            file_data["sections"][j // 2]["level"] = section_level  # Inserisce il livello nella sezione corrispondente
-
-    return data_table
-
-def add_word_count(data_table):
-    for file_data in data_table:
-        for section in file_data["sections"]:
-            word_count = section["section_text"].count(" ")
-            section["word_count"] = word_count
-    return data_table
-
-def categorize_sections(data_table):
-    for file_data in data_table:
-        for section in file_data["sections"]:
-            keys = [key for key, values in c.tipologia.items() if section["section_title"].strip().lower() in [v.strip().lower() for v in values]]
-            if keys:
-                section["category"] = keys[0]
-            else:
-                section["category"] = "Uncategorized"
-    return data_table
-
-def count_images_in_sections(data_table):
-    for file_data in data_table:
-        for section in file_data["sections"]:
-            # Esempio di codice che conta le immagini (ipotetico)
-            image_count = section["section_text"].count("![")
-            section["image_count"] = image_count
-    return data_table
-
-#aggiungere qui altre statistiche
-
-
-
-def data_table(num_file_md, link_list, path_md_file):
-    data_table = initialize_data_table(num_file_md, link_list, path_md_file)
-    data_table = extract_sections(data_table, path_md_file)  # Estrazione delle sezioni
-    data_table = add_section_levels(data_table, path_md_file)  # Aggiunta dei livelli
-    data_table = add_word_count(data_table)  # Aggiunta del conteggio delle parole
-    data_table = categorize_sections(data_table)  # Categorizzazione delle sezioni
-    data_table = count_images_in_sections(data_table)
-    data_table = add_score(data_table)  # Calcolo e aggiunta del punteggio
-    #data_table = find_image_for_section(data_table)
-
-    return data_table
-
-
-def add_score(data_table):
-    for file_data in data_table:
-        for section in file_data["sections"]:
-            # Parametri per il calcolo del punteggio (esempio):
-            # - Conteggio parole
-            # - Livello della sezione
-            # - Categoria
-
-            word_count = section.get("word_count", 0)
-            level = section.get("level", "")
-            category = section.get("category", "Uncategorized")
-
-            # Esempio di calcolo del punteggio basato su parametri ipotetici
-            score = 0
-
-            # Aumenta il punteggio in base al conteggio delle parole
-            score += word_count / 100  # 1 punto ogni 100 parole
-
-            # Aumenta/diminuisci il punteggio in base al livello del titolo e quindi della sezione
             if level == 1:
-                score += 5
-            elif level == 2:
-                score += 3
-            elif level == 3:
-                score += 1
-
-            # Aumenta il punteggio in base alla categoria
-            if category == "Uncategorized":
-                score -= 2
+                h1_titles.append((cleaned_title, level, category))
             else:
-                score += 2
+                h2_3_titles.append((cleaned_title, level))
+    #print(clean_text(md_text))
+    return h1_titles, h2_3_titles, md_text
 
-            section["score"] = score
+
+# calcola lunghezza delle sezioni come numero caratteri tra due titoli h1
+def calculate_section_length(md_text, h1_title, next_h1_title):
+    section_start = md_text.find(h1_title) + len(h1_title)
+    # Trova l'indice di fine (fixed: ultimo h1_title == next_h1_title non veniva aggiornato)
+    if next_h1_title and next_h1_title!=h1_title:
+        section_end = md_text.find("# " + next_h1_title)
+    else:
+        section_end = len(md_text)  # Se non c'è next_h1_title, prendi la lunghezza totale
+    # Estrai il testo della sezione
+    section_text = md_text[section_start:section_end].strip()
+    # Ripulisci e conta caratteri
+    cleaned_text = clean_text(section_text)
+    return len(cleaned_text)
+
+
+
+# Richiama le liste, sottrae indici di due _h1 successivi, conta titoli(e sezioni) _h2 e _h3. Popola la tabella
+def extract_sections(data_table, path_md_file):
+
+    for file_data in data_table:
+
+        h1_titles, h2_3_titles, md_text = find_titles_md(path_md_file + file_data["file_name"])
+
+        for i, (title, _,_) in enumerate(h1_titles):
+
+            file_data["h1_titles"].append(title)
+
+            if i + 1 < len(h1_titles):
+                next_h1_title = h1_titles[i+1][0]
+            else: None
+
+            char_count = calculate_section_length(md_text, title, next_h1_title)
+            file_data["char_counts"].append(char_count)
+
+            file_data["category"].append(h1_titles[i][2])
+
+        # Popola la colonna h2_h3_titles
+        for i, (title, _) in enumerate(h2_3_titles):
+            file_data["h2_h3_titles"].append(title)
+        # Popola la colonna h2_h3_counts
+        file_data["h2_h3_counts"]= len(h2_3_titles)
     return data_table
 
 
-def sum_scores_by_file(data_table):
-    score_summary = {}
+def get_data_table(num_file_md, link_list,path_md_file):
+    data_table=initialize_data_table(num_file_md,link_list)
+    a=extract_sections(data_table, path_md_file)
+    return a
 
-    for file_data in data_table:
-        file_name = file_data["file_name"]
-        total_score = sum(section.get("score", 0) for section in file_data["sections"])
 
-        score_summary[file_name] = total_score
+def clean_text(md_text):
+    # Rimuove i link Markdown (es. [test](http://example.com))
+    md_text = re.sub(r'\[.*?\]\(.*?\)', '', md_text)
+    # Rimuove i tag HTML
+    md_text = re.sub(r'<.*?>', '', md_text)
+    # Rimuove link a siti web
+    md_text = re.sub(r'http[s]?://\S+', '', md_text)
+    # Rimuove emoji e caratteri non alfanumerici
+    md_text = re.sub(r'[^\x00-\x7F]+', '', md_text)
+    # Rimuove punteggiatura, caratteri di a capo e spazi
+    md_text = re.sub(r'[^\w]', '', md_text)
+    return md_text
 
-    return score_summary
+
+
+def categorize_title(cleaned_title):
+    # Controlla se il cleaned_title corrisponde a una chiave
+    for key in tipologia.keys():
+        if key.lower() == cleaned_title.lower():
+            return key
+
+    # Controlla tra le keywords
+    for key, keywords in tipologia.items():
+        if any(keyword.lower() in cleaned_title.lower() for keyword in keywords):
+            return key
+
+    return None

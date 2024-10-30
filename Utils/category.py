@@ -5,7 +5,7 @@ title = ["Title", "Name of Project","Index","Table of contents","Overview","Intr
 
 install = ["Install", "How to install", "Installation", "Installing","Build", "Building", "Setup", "Build from source","Deployment","Manual","Source","Download","pip","Binary","Executable"]  # Da finire
 
-usage = ["Usage", "How to Use","Command" , "Example","Using","Models", "Running","Sample","Illustrations","Demo","How to play","Getting started","Examples","Utilization","Operation","Application","Quick starting","Initialization","Instant Guide","Command","CLI","Demo"]
+usage = ["Usage", "How to Use","Command" , "Examples", "Example","Using","Models", "Running","Sample","Illustrations","Demo","How to play","Getting started","Examples","Utilization","Operation","Application","Quick starting","Initialization","Instant Guide","Command","CLI","Demo"]
 
 configuration=["Config","Settings","Options","Flag","Parameters","Environment variables","Editable values","Custom","Paths","Storing","Proxies","Customization"]
 

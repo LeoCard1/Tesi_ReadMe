@@ -1,6 +1,6 @@
 import urllib.request
 
-# Funzione per rinominare gli URL e restituire la lista dei siti
+#2)Funzione per rinominare gli URL e restituire la lista dei siti
 def rename_urls(site_list):
     s_raw = []
     for id, s in enumerate(site_list):
@@ -10,7 +10,7 @@ def rename_urls(site_list):
         s_raw.append(c)
     return s_raw
 
-# Funzione per scaricare i file Markdown
+#3)Funzione per scaricare i file Markdown
 def download_md_file(link_list, path_md_file):
     i = 0
     for link in link_list:
@@ -20,3 +20,4 @@ def download_md_file(link_list, path_md_file):
         except:
             pass
     return i
+
