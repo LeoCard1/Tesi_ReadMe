@@ -2,7 +2,14 @@ import re
 from markdown_it import MarkdownIt
 from Utils.category import tipologia
 
-#Inizializza i campi della tabella
+"""
+Inizializza una struttura dati per memorizzare informazioni sui file Markdown.
+Args:
+    num_file_md (int): Numero di file Markdown.
+    link_list (list): Lista di link corrispondenti a ciascun file Markdown.
+Returns:
+    list: Una lista di dizionari contenenti i dati inizializzati per ogni file.
+"""
 def initialize_data_table(num_file_md, link_list):
     data_table = []
     for i in range(num_file_md):
@@ -18,7 +25,16 @@ def initialize_data_table(num_file_md, link_list):
         data_table.append(file_data)
     return data_table
 
-#Restituisce due liste e il testo Markdown integrale ripulito. Ogni titolo è una tupla con livello e categoria
+    """
+    Estrae i titoli H1 e H2/H3 da un file Markdown e restituisce il testo ripulito.
+    Args:
+        md_file (str): Percorso del file Markdown.
+    Returns:
+        tuple: Una tupla contenente:
+            - lista di titoli H1 con il loro livello e categoria,
+            - lista di titoli H2/H3 con i loro livelli,
+            - testo Markdown ripulito.
+    """
 def find_titles_md(md_file):
     try:
         with open(md_file, 'r', encoding='utf-8') as file:
@@ -47,8 +63,15 @@ def find_titles_md(md_file):
     #print(clean_text(md_text))
     return h1_titles, h2_3_titles, md_text
 
-
-# calcola lunghezza delle sezioni come numero caratteri tra due titoli h1
+"""
+Calcola la lunghezza in caratteri della sezione tra due titoli H1.
+Args:
+    md_text (str): Il testo completo del Markdown.
+    h1_title (str): Il titolo H1 corrente.
+    next_h1_title (str): Il titolo H1 successivo.
+Returns:
+    int: Il conteggio dei caratteri della sezione.
+"""
 def calculate_section_length(md_text, h1_title, next_h1_title):
     section_start = md_text.find(h1_title) + len(h1_title)
     # Trova l'indice di fine (fixed: ultimo h1_title == next_h1_title non veniva aggiornato)
@@ -62,9 +85,14 @@ def calculate_section_length(md_text, h1_title, next_h1_title):
     cleaned_text = clean_text(section_text)
     return len(cleaned_text)
 
-
-
-# Richiama le liste, sottrae indici di due _h1 successivi, conta titoli(e sezioni) _h2 e _h3. Popola la tabella
+"""
+ Popola la tabella dei dati con sezioni e informazioni sui titoli dai file Markdown.
+ Args:
+     data_table (list): La tabella dei dati inizializzata.
+     path_md_file (str): Percorso della directory contenente i file Markdown.
+ Returns:
+     list: Tabella dei dati aggiornata con le informazioni estratte.
+ """
 def extract_sections(data_table, path_md_file):
 
     for file_data in data_table:
@@ -91,13 +119,27 @@ def extract_sections(data_table, path_md_file):
         file_data["h2_h3_counts"]= len(h2_3_titles)
     return data_table
 
+    """
+    Funzione principale per raccogliere e restituire la tabella dei dati dai file Markdown.
+    Args:
+        num_file_md (int): Numero di file Markdown.
+        link_list (list): Lista di link corrispondenti a ciascun file Markdown.
+        path_md_file (str): Percorso della directory contenente i file Markdown.
+    Returns:
+        list: Tabella finale dei dati con tutte le informazioni estratte.
+    """
 
 def get_data_table(num_file_md, link_list,path_md_file):
     data_table=initialize_data_table(num_file_md,link_list)
-    a=extract_sections(data_table, path_md_file)
-    return a
+    return extract_sections(data_table, path_md_file)
 
-
+    """
+    Pulisce il testo Markdown rimuovendo elementi indesiderati.
+    Args:
+        md_text (str): Il testo Markdown da pulire.
+    Returns:
+        str: Testo pulito con link, tag HTML e caratteri indesiderati rimossi.
+    """
 def clean_text(md_text):
     # Rimuove i link Markdown (es. [test](http://example.com))
     md_text = re.sub(r'\[.*?\]\(.*?\)', '', md_text)
@@ -112,7 +154,13 @@ def clean_text(md_text):
     return md_text
 
 
-
+    """
+    Classifica un titolo ripulito in base a categorie predefinite.
+    Args:
+        cleaned_title (str): Il titolo da classificare.
+    Returns:
+        str or None: La categoria del titolo se trovata, altrimenti None.
+    """
 def categorize_title(cleaned_title):
     # Controlla se il cleaned_title corrisponde a una chiave
     for key in tipologia.keys():

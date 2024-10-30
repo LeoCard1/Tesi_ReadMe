@@ -3,7 +3,7 @@ prerequisites = ["Prerequisites", "Requirements","Dependencies","libcurls","Gett
 
 title = ["Title", "Name of Project","Index","Table of contents","Overview","Introduction","About","Description","Purpose","Summary"]
 
-install = ["Install", "How to install", "Installation", "Installing","Build", "Building", "Setup", "Build from source","Deployment","Manual","Source","Download","pip","Binary","Executable"]  # Da finire
+install = ["Install", "How to install", "Installation", "Installing","Build", "Building", "Setup", "Build from source","Deployment","Manual","Source","Download","pip","Binary","Executable"]
 
 usage = ["Usage", "How to Use","Command" , "Examples", "Example","Using","Models", "Running","Sample","Illustrations","Demo","How to play","Getting started","Examples","Utilization","Operation","Application","Quick starting","Initialization","Instant Guide","Command","CLI","Demo"]
 

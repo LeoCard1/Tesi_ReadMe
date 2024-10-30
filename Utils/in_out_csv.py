@@ -2,10 +2,8 @@ import csv
 
 """
 Legge un file CSV e restituisce una lista di URL.
-
 Args:
     path (str): Il percorso del file CSV da leggere.
-
 Returns:
     list: Una lista di URL che iniziano con 'http'.
 """
@@ -20,7 +18,6 @@ def read_urls(path):
 
     """
     Scrive i dati in un file CSV.
-
     Args:
         data_table (list): Una lista di dizionari contenenti dati da scrivere.
         name_file_csv_out (str): Il nome del file CSV di output.
